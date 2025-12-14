@@ -29,10 +29,7 @@
             </div>
         </div>
         <div class="game-board" id="gameBoard">
-            <div class="card">
-                <div class="card-front"><i class ="fas fa-heart"></i></div>
-                <div class="card-back"><img src="https://i.pinimg.com/736x/87/c1/13/87c11395015a6f462be0eeb69b9deea3.jpg" alt=""></div>
-            </div>
+    
         </div>
         <div class="controls">
             <button class="btn" onclick="newGame()">
@@ -40,12 +37,14 @@
             </button>
         </div>
     </div>
-    <div class="modal-content">
+    <div class="modal">
+        <div class="modal-content">
         <h2><i class="fas fa-trophy"></i>You Win<i class="fas fa-trophy"></i></h2>
         <p>Moves: <span id="finalMoves"></span><br>Time: <span id="finalTime"></span></p>
         <button class="btn" onclick="newGame()">Play Again</button>
-        
     </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
