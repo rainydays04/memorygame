@@ -5,5 +5,55 @@
 
 body{
     font-family:"Comic Sans Ms", "Arial", sans-serif;
-    background: #426bc2;
+    background: #D6E6FA;
+    padding:20px;
+    min-height:100vh;
 }
+
+.container{
+    max-width:900px;
+    margin:0 auto;
+}
+
+.header{
+    text-align:center;
+    background:white;
+    border-radius:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 0 #B6CBE8;
+    border: 5px solid white;
+
+}
+
+h1{
+    color:#E3B6CF;
+    font-size:2.5em;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex:wrap;
+}
+
+.stat{
+    background:#AFC6E6;
+    color:white;
+    padding:12px 25px;
+    border-radius:20px;
+    box-shadow: 0 5px 0 #9FB8DB;
+
+}
+
+.stat-label{
+    font-size:0.9em;
+    margin-bottom:5px;
+}
+
+.stat-value{
+    font-size:1.8em;
+    font-weight:bold;
+}
+
