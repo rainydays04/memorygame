@@ -21,7 +21,8 @@ var timerInterval;
 
 
 function startGame(){
-    var gameBoard = document.getElementById("game-board")
+    // the HTML uses id="gameBoard" on the container, make sure we match it
+    var gameBoard = document.getElementById("gameBoard")
     gameBoard.innerHTML = ""
 
     var cardImages = images.concat(images)
@@ -54,6 +55,48 @@ function startGame(){
     updateStats();
     clearInterval(timerInterval)
 
+}
+
+// update the visible stats: Moves, Time, Matches
+function updateStats(){
+    // the HTML has three .stat-value elements in order: Moves, Time, Matches
+    var statEls = document.querySelectorAll('.stat .stat-value');
+    if(statEls.length >= 3){
+        statEls[0].textContent = moves;
+        statEls[1].textContent = formatTime(seconds);
+        statEls[2].textContent = matches + '/8';
+    }
+    var finalMoves = document.getElementById('finalMoves');
+    var finalTime = document.getElementById('finalTime');
+    if(finalMoves) finalMoves.textContent = moves;
+    if(finalTime) finalTime.textContent = formatTime(seconds);
+}
+
+function formatTime(totalSeconds){
+    var mins = Math.floor(totalSeconds/60);
+    var secs = totalSeconds % 60;
+    return mins + ':' + (secs < 10 ? '0' + secs : secs);
+}
+
+function startTimer(){
+    if(timerRunning) return;
+    timerRunning = true;
+    timerInterval = setInterval(()=>{
+        seconds++;
+        updateStats();
+    },1000);
+}
+
+function endGame(){
+    // stop timer
+    clearInterval(timerInterval);
+    timerRunning = false;
+
+    // show modal-like summary; the HTML contains .modal-content
+    var modal = document.querySelector('.modal-content');
+    if(modal){
+        modal.classList.add('show');
+    }
 }
 
 function flipCard(){
@@ -101,6 +144,9 @@ function checkMatch(){
 }
 
 startGame()
+
+// expose a global newGame() so the button in HTML works
+window.newGame = startGame;
 
 function resetCards(){
     firstCard=null
