@@ -202,3 +202,28 @@ h1{
     font-weight:bold;
     
 }
+
+@media (max-width:768px){
+    .game-board{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    h1{
+        font-size:2em;
+    }
+}
+@media (max-width:480px){
+    .game-board{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    h1{
+        font-size:2em;
+    }
+
+    .card.front{
+        font-size:2.5em;
+        
+    }
+}
