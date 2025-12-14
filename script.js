@@ -14,7 +14,7 @@ var firstCard = null
 var secondCard = null
 var canFlip = true
 var matches = 0
-var noves = 0
+var moves = 0
 var seconds = 0
 var timerRunning = false
 var timerInterval;
@@ -28,13 +28,16 @@ function startGame(){
     cardImages.sort(function () {
         return Math.random() - 0.5
 
-    })
+    });
 
     for (var i = 0; i < cardImages.length; i++) {
         var card = document.createElement("div");
         card.className="card";
-        card.innerHTML='<div class="card-front"><i class ="fas fa-heart"></i></div><div class="card-back"><img src="${cardImages[i]}" alt=""></div>'
-        card.onclick=flipCard;
+        card.innerHTML = `
+            <div class="card-front"><i class="fas fa-heart"></i></div>
+            <div class="card-back"><img src="${cardImages[i]}" alt="" /></div>
+        `
+        card.onclick = flipCard;
         card.dataset.image=cardImages[i]
         gameBoard.appendChild(card)
 
@@ -84,7 +87,7 @@ function checkMatch(){
             matches++;
             updateStats()
             resetCards()
-            if(matches=8){
+            if(matches===8){
                 endGame()
             }
         }, 500);
@@ -99,7 +102,7 @@ function checkMatch(){
 
 startGame()
 
-function ressetCards(){
+function resetCards(){
     firstCard=null
     secondCard=null
     canFlip=true
