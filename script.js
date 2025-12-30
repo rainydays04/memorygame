@@ -159,7 +159,7 @@ function resetCards(){
 }
 
 function startTimer(){
-
+    
 }
 
 
