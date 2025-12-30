@@ -95,6 +95,9 @@ function newLevel(){
     document.getElementById("level").style.visibility = "visible";
     window.location.href="levelTwo.html";
 }
+function nextLeve(){
+    window.location.href="levelTwo.html";
+}
 
 function flipCard(){
     if(!canFlip) return
