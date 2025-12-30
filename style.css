@@ -236,3 +236,7 @@ h2{
 
     }
 }
+
+#level{
+    visibility: hidden;
+}
