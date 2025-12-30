@@ -87,16 +87,15 @@ function startTimer(){
     },1000);
 }
 
-function endGame(){
+function newLevel(){
     // stop timer
     clearInterval(timerInterval);
     timerRunning = false;
 
-    // show modal-like summary; the HTML contains .modal-content
-    var modal = document.querySelector('.modal-content');
-    if(modal){
-        modal.classList.add('show');
-    }
+    document.getElementById("level").style.visibility = "visible";
+}
+function nextLevel(){
+    window.location.href="levelTwo.html";
 }
 
 function flipCard(){
@@ -131,7 +130,9 @@ function checkMatch(){
             updateStats()
             resetCards()
             if(matches===8){
-                endGame()
+                
+                newLevel()
+                
             }
         }, 500);
     }else{
@@ -142,6 +143,9 @@ function checkMatch(){
         },1000);
     }
 }
+
+
+
 
 startGame()
 
@@ -155,5 +159,5 @@ function resetCards(){
 }
 
 function startTimer(){
-
+    
 }
