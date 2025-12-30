@@ -92,7 +92,7 @@ function newLevel(){
     clearInterval(timerInterval);
     timerRunning = false;
 
-    document.getElementById("level").style.visibility = "visibble";
+    document.getElementById("level").style.visibility = "visible";
 }
 
 function flipCard(){
