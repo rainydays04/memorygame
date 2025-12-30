@@ -93,6 +93,7 @@ function newLevel(){
     timerRunning = false;
 
     document.getElementById("level").style.visibility = "visible";
+    window.location.href="levelTwo.html";
 }
 
 function flipCard(){
