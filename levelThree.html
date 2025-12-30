@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kpop Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fa-solid fa-cloud"></i>Le Sserafim Memory Game<i class="fa-solid fa-cloud"></i></h1>
+            <h2><i class="fa-solid fa-cloud"></i>Level 1<i class="fa-solid fa-cloud"></i></h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-label">
+                        Moves
+                    </div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">Matches</div>
+                    <div class="stat-value">0/8</div>
+                </div>
+            </div>
+        </div>
+        <div class="game-board" id="gameBoard">
+    
+        </div>
+        <div class="controls">
+            <button class="btn" id="level" onclick="nextLevel()">
+                Next Level
+            </button>
+        </div>
+    </div>
+    
+    
+    <script src="levelThree.js"></script>
+</body>
+</html>
