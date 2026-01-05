@@ -59,9 +59,17 @@ function startGame(){
 
 // update the visible stats: Moves, Time, Matches
 function updateStats(){
-    // the HTML has three .stat-value elements in order: Moves, Time, Matches
+    // the HTML might have either 2 or 3 .stat-value elements.
+    // Supported layouts:
+    //  - [Moves, Matches]
+    //  - [Moves, Time, Matches]
     var statEls = document.querySelectorAll('.stat .stat-value');
-    if(statEls.length >= 3){
+    if (statEls.length === 2) {
+        // layout: Moves, Matches
+        statEls[0].textContent = moves;
+        statEls[1].textContent = matches + '/8';
+    } else if (statEls.length >= 3) {
+        // layout: Moves, Time, Matches
         statEls[0].textContent = moves;
         statEls[1].textContent = formatTime(seconds);
         statEls[2].textContent = matches + '/8';
@@ -95,7 +103,7 @@ function newLevel(){
     document.getElementById("level").style.visibility = "visible";
 }
 function nextLevel(){
-    window.location.href="levelTwo.html";
+    window.location.href="index.html";
 }
 
 function flipCard(){
